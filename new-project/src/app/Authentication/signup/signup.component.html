@@ -1,0 +1,45 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+            <form action="" #f="ngForm" (ngSubmit)="onSignUp(f.value)">
+                <div class="form-group">
+                    <label for="">First Name :: </label>
+                    <input #fname="ngModel" ngModel name="firstName" required type="text"
+                        placeholder="Enter the First Name" class="form-control">
+
+                    <label for="">Last Name :: </label>
+                    <input #lname="ngModel" ngModel name="lastName" required type="text"
+                        placeholder="Enter the Last Name" class="form-control">
+
+                    <label for="">E-Mail :: </label>
+                    <input #email="ngModel" ngModel name="email" required type="text" placeholder="Enter the E-Mail"
+                        class="form-control">
+
+                    <label for="">Mobile No :: </label>
+                    <input #mobileNumber="ngModel" ngModel name="mobileNumber" required type="text"
+                        placeholder="Enter the Mobile Number" class="form-control">
+
+                    <label for="">Password :: </label>
+                    <input #password="ngModel" ngModel name="password" required type="text"
+                        placeholder="Enter the Password" class="form-control">
+
+                    <label for="">Confirm Password :: </label>
+                    <input #confirmPassword="ngModel" ngModel name="confirmPassword" required type="text"
+                        placeholder="Enter the Confirm Password" class="form-control">
+                    
+                    <br><br>    
+                    <button type="submit">Register</button>
+                </div>
+            </form>
+
+            <div>
+                <p>Already a member? <a routerLink="/login">login</a></p>
+                </div>
+
+        </div>
+
+       
+    </div>
+</div>

@@ -1,0 +1,203 @@
+<div  style=" background-image: url('../../assets/section9.1.jpg');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;">
+    <div style=" background-image: url('../../assets/section9.1.jpg');background-size: 110%;"
+ class="card-top container-fluid">
+    <div class="container d-flex">
+        <div class="item" >
+            <a>
+                <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
+                <h6>All products</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a>
+                <img src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100" alt="">
+                <h6>Electronics</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a>
+                <img src="https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100" alt="">
+                <h6>Fashion</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a>
+                <img style="width: 53px; margin-top: 7px;"
+                    src="https://rukminim1.flixcart.com/image/580/696/kkh6zrk0/jewellery-set/o/w/z/gt-ns-862-matushri-art-original-imafzt9teacakjyn.jpeg?q=50"
+                    alt="">
+                <h6 style="padding-top: 5px;">Jewllery</h6>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col col-sm-4 col-md-6">
+            <div class="form-group butt">
+                <label for="">ID ::</label>
+                <input #mobileid type="text" name="id" id="" class="form-control"><br>
+                <button (click)="ongetOnlyOneMobile(mobileid.value)" class="btn btn-primary">Get Your Mobile</button>
+            </div>
+
+            <div [hidden]="isonemobhid">
+                <!-- <h2>ID :: {{getOneMobile.mobileid}}</h2> -->
+                <h2>Mobile Name :: {{getOneMobile.mobileName}}</h2>
+                <h2>Mobile Price :: {{getOneMobile.price}}</h2>
+                <h2>Mobile Speed :: {{getOneMobile.speed}}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col col-sm-12 col-md-12">
+
+            <div [hidden]="ishid">
+                <form #f="ngForm" (ngSubmit)="onSend(f.value)">
+                    <div class="form-group">
+                        <label for="">ID :: </label>
+                        <input #id ngModel required type="text" name="mobileid" placeholder="Enter the mobile name"
+                            class="form-control"><br><br>
+                        <label for="">Name :: </label>
+                        <input ngModel required #name name="mobileName" type="text" placeholder="Enter the mobile name"
+                            class="form-control"><br><br>
+                        <label for="">Price :: </label>
+                        <input ngModel required #price name="price" type="text" placeholder="Enter the mobile price"
+                            class="form-control"><br><br>
+                        <label for="">Speed :: </label>
+                        <input ngModel required #speed name="speed" type="text" placeholder="Enter the mobile speed"
+                            class="form-control"><br><br>
+                        <!-- <button (click)="onSend(id.value,name.value,price.value,speed.value)">Add</button> -->
+                        <button class="btn btn-outline-info" type="submit">Add</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="buts">
+                <button (click)="onOpenSend()" class="btn btn-primary">PostData</button>&nbsp;&nbsp;&nbsp;
+
+                <button (click)="getBySpeed()" class="btn btn-primary">Get By Speed</button>
+            </div>
+
+            <div [hidden]="ishidspeed" class="form-group">
+                <div class="table-responsive">
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <td>Mobile id </td>
+                            <td>Mobile Name</td>
+                            <td>Price</td>
+                            <td>Speed</td>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let items of mobArrSpeed">
+                                <td>{{items.mobileid}}</td>
+                                <td>{{items.mobileName}}</td>
+                                <td>{{items.price}}</td>
+                                <td>{{items.speed}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- <div class="style">
+        <button (click)="getAllMobiles()">GetAllData</button>
+    </div> -->
+
+            <!-- <div>
+        <label for="">ID :: &nbsp;&nbsp;</label>
+        <input [(ngModel)]="updateData.mobileid"  name="mobileid" type="text" placeholder="Id"><br><br>
+        <label for="">Name :: &nbsp;&nbsp;</label>
+        <input [(ngModel)]="updateData.mobileName" name="mobileName" type="text" placeholder="Enter Mobile Name"><br><br>
+        <label for="">Price :: &nbsp;&nbsp;</label>
+        <input [(ngModel)]="updateData.price" name="price" type="text" placeholder="Enter Mobile Price"><br><br>
+        <label for="">Speed :: &nbsp;&nbsp;</label>
+        <input [(ngModel)]="updateData.speed" name="speed" type="text" placeholder="Enter R am"><br><br>
+        <button (click)="onUpdate()">Update</button>
+    </div> -->
+            <div>
+                <form action="">
+                    <div class="form-group" [hidden]="isposthid">
+                        <label for="">Id : </label>
+                        <input type="text" name="id" id="id" [(ngModel)]="updateData.mobileid" readonly
+                            class="form-control"><br><br>
+                        <label for="">Name : </label>
+                        <input type="text" name="name" id="name" [(ngModel)]="updateData.mobileName"
+                            class="form-control"><br><br>
+                        <label for="">Price : </label>
+                        <input type="text" name="price" id="price" [(ngModel)]="updateData.price"
+                            class="form-control"><br><br>
+                        <label for="">Speed : </label>
+                        <input type="text" name="speed" id="speed" [(ngModel)]="updateData.speed"
+                            class="form-control"><br><br>
+                        <button (click)="onUpdate()">Update</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- <div class="table-responsive">
+                <table class="table table-dark table-hover">
+                    <thead>
+                        <th>Mobile Id</th>
+                        <th>Action</th>
+                        <th>Mobile Name</th>
+                        <th>Price</th>
+                        <th>Speed</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of mobArrobj">
+                            <td>{{item.mobileid}}</td>
+                            <td class="tubs1"><button (click)="onEdit(item)" class="btn btn-outline-success">Edit</button>&nbsp;&nbsp;
+                                <button (click)="onDelete(item.mobileid)" class="btn btn-outline-danger">Delete</button>
+                            </td>
+                            <td>{{item.mobileName}}</td>
+                            <td>{{item.price}}</td>
+                            <td>{{item.speed}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> -->
+            <!-- <div class="mySpace">
+                <div class="container">
+                    <div>
+                        <div class="col col-sm-4 col-md-10 col-lg-12 col-xl-12 offset-2 row myclass">
+                            <div class="card mycard mt-3" style="width: 18rem;" *ngFor="let item of mobArrobj">
+                                <img src="assets/mobilePhotos/ggoglepixel.jpg" class="card-img-top" alt="...">
+                                <h5 class="card-title"><b>Name : </b> {{item.mobileName}} </h5>
+                                <h5 class="card-title"><b>Price : </b> {{item.price}} </h5>
+                                <h5 class="card-title"><b>Speed : </b> {{item.speed}} </h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's
+                                    content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div> -->
+
+            <div  class="container">
+                <div class="row">
+                    <ng-container  *ngFor="let item of mobArrobj">
+                        <div style="background-color: rgb(215, 229, 233);" class="card col-sm-4 col-md-3">
+                            <img src="../../assets/mobilePhotos/iphone14.jpg" alt="Error" >
+                            <h5  style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.mobileName}}</h5>
+                            <p  style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;"><strong>Speed : </strong>{{item.speed}}</p>
+                            <p><strong>Price : </strong><strong>$</strong>{{item.price}}</p>
+                            <button class="btn btn-primary" (click)="addToCart(item)">Add To Cart</button>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+
+        </div>
+
+        <br><br><br><br><br>
+    </div>
+</div>
+</div>

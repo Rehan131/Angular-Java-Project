@@ -1,0 +1,90 @@
+
+table,th,td{
+    border: 2px solid;
+    border-collapse: collapse;
+    padding: 30px;
+    margin: 10px;
+    text-align: center;
+}
+
+/* button{
+    /* padding: 10px;
+    margin: 30px;
+    align-items: center;
+    text-align: center;
+    align-content: center; 
+} */
+
+.butt{
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.buts{
+    margin: 10px;
+    padding: 10px;
+}
+
+.tubs1{
+    margin: 10px;
+    padding: 20px;
+}
+.mySpace{
+    display: flex;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    padding: 70px;
+    margin: 10px;
+}
+.mycard{
+    height: 400px;
+    margin: 10px;
+    
+}
+
+.card-top{
+    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background: #fff;
+    background-clip: border-box;
+    border: 1 px solid rgba(0, 0, 0, 0.2);
+    border-radius: .25rem;
+}
+
+.item img{
+    width:64px
+}
+
+.item{
+    margin: 0px 15px;
+    text-align: center;
+}
+
+.item a:hover{
+    color: rgb(46, 99, 222);
+}
+
+.card{
+    padding: 20px;
+    margin: 40px;
+}
+
+.card img{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.card img:hover{
+    transition: 0.3s;
+    transform: scale(1.1);
+}
+
+/* .container{
+   
+} */

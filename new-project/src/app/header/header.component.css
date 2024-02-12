@@ -1,0 +1,94 @@
+.custom-icon{
+    color: aliceblue;
+}
+
+/* style.css */
+
+/* Header Background */
+.navbar {
+    background-color: #3498db; /* You can change this color to your preference */
+  }
+  
+  /* Brand Logo Styles */
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Icon Styles */
+  .custom-icon {
+    color: #fff;
+  }
+  
+  /* Navigation Links Styles */
+  .navbar-nav .nav-link {
+    font-size: 18px;
+    color: #fff;
+    margin-right: 15px;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #ecf0f1; /* Change hover color as needed */
+  }
+  
+  /* Search Input Styles */
+  .form-control {
+    width: 300px;
+  }
+  
+  /* Search Button Styles */
+  .btn-outline-success {
+    margin-left: 10px;
+  }
+  
+  /* Login/Logout Button Styles */
+  .btn-outline-success a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /* Cart Button Styles */
+  .btn-primary {
+    margin-left: 10px;
+  }
+  
+  /* Cart Icon and Badge Styles */
+  .fa-cart-plus {
+    font-size: 25px;
+  }
+  
+  .badge.bg-danger {
+    font-size: 14px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 991px) {
+    .navbar-nav .nav-link {
+      margin-right: 10px;
+    }
+  
+    .form-control {
+      width: 200px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-brand {
+      font-size: 20px;
+    }
+  
+    .navbar-nav .nav-link {
+      font-size: 16px;
+      margin-right: 10px;
+    }
+  
+    .form-control {
+      width: 150px;
+    }
+  }
+  
+

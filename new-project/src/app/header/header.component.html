@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <i style="font-size: 30px; color: rgb(255, 225, 0);" class="fas fa-shopping-cart custom-icon"></i>&nbsp;&nbsp;
+  <a style="font-size: 20px;" class="navbar-brand" href="#">Flipkart Lite</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+     
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/signup">SignUp</a>
+      </li>
+    </ul>
+
+    <form class="form-inline form-group my-2 my-lg-0">
+      <input style="width: 400px;" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>&nbsp;&nbsp;
+      <button class="btn btn-outline-success">
+        <a *ngIf="!loggedin" routerLink="/login" >Login</a>
+        <a *ngIf="loggedin" (click)="onLogout()" >Logout</a>
+      </button>&nbsp;
+      <div>
+        <button routerLink="cart" class="btn btn-primary">
+            <i style="font-size: 25px;" class="fas fa-cart-plus"></i>
+            <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+        </button>
+    </div>
+    </form>
+  </div>
+</nav>
+
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">
+    <i class="fas fa-shopping-cart custom-icon"></i>
+    Flipkart Lite
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/signup">SignUp</a>
+      </li>
+       Add more navigation items as needed -->
+
+      <!-- Uncomment the following lines when you have a login/logout functionality -->
+      <!-- 
+      <li class="nav-item">
+        <a *ngIf="!loggedin" routerLink="/login" class="nav-link">Login</a>
+        <a *ngIf="loggedin" (click)="onLogout()" class="nav-link">Logout</a>
+      </li>
+      
+
+    </ul>
+
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
+    <div class="ml-2">
+      <button routerLink="cart" class="btn btn-primary">
+        <i class="fas fa-cart-plus"></i>
+        <div class="badge bg-danger">{{totalItem}}</div>
+      </button>
+    </div>
+  </div>
+</nav> -->
